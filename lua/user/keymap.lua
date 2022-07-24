@@ -25,8 +25,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Toggle relative numbers --
+-- Toggle relative numbers
 keymap("n", "<C-s>", "<cmd>:set number relativenumber!<cr>", opts)
+
+-- Toggle wrapper
+keymap("n", "<C-w>", "<cmd>:set wrap!<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
