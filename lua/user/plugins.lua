@@ -58,7 +58,13 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "karb94/neoscroll.nvim"
+  
+  -- Colors
   use "NvChad/nvim-colorizer.lua"
+  use "ziontee113/color-picker.nvim"
+
+  -- Keybindings
+  use "folke/which-key.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -69,7 +75,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  use "L3MON4D3/LuaSnip" -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
@@ -77,7 +83,8 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "RRethy/vim-illuminate"
+  use "RRethy/vim-illuminate" -- highlight other uses of the word under cursor-- Nvim Navic
+  use "SmiteshP/nvim-navic" -- Gps
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -106,12 +113,6 @@ return packer.startup(function(use)
       "nvim-neotest/neotest-plenary",
       "nvim-neotest/neotest-vim-test",
     },
-  }
-
-  -- Nvim Navic
-  use {
-    "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig"
   }
 
   -- Git
