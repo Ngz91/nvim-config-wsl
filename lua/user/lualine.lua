@@ -184,9 +184,11 @@ ins_left {
   },
 }
 
+local gps_value = get_gps()
+
 ins_left {
-	gps_location,
-	sources = {gps_location},
+	gps_value,
+	sources = {gps_value},
 	cond = conditions.hide_in_width,
 }
 
