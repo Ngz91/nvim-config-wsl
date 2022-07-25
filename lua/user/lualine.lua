@@ -6,14 +6,38 @@ if not status_lualine_ok then
   return
 end
 
+local status_lspconfig_ok, lspconfig = pcall(require, "lspconfig")
+if not status_lspconfig_ok then
+  return
+end
+
 local status_navic_ok, navic = pcall(require, "nvim-navic")
 if not status_navic_ok then 
   return
 end
 
-local status_lspconfig_ok, lspconfig = pcall(require, "lspconfig")
-if not status_lspconfig_ok then
-  return
+local is_empty = function(s)
+  return s == nil or s == ""
+end
+
+local get_gps = function()
+  local status_navic_ok, navic = pcall(require, "nvim-navic")
+  if not status_navic_ok then 
+    return
+  end
+
+  local status_ok, gps_location = pcall(gps.get_location, {})
+  if not status_ok then
+    return ""
+  end
+
+  if not gps.is_available() or gps_location == "error" then
+    return ""
+  end
+
+  if not is_empty(gps_location) then
+    return "> " .. gps_location
+  end
 end
 
 -- Color table for highlights
@@ -161,8 +185,8 @@ ins_left {
 }
 
 ins_left {
-	navic,
-	sources = {navic},
+	gps_location,
+	sources = {gps_location},
 	cond = conditions.hide_in_width,
 }
 
