@@ -85,6 +85,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "RRethy/vim-illuminate" -- highlight other uses of the word under cursor-- Nvim Navic
   use "SmiteshP/nvim-navic" -- Gps
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- Diagnostics using virtual text 
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
