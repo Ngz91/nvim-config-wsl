@@ -46,12 +46,6 @@ local conditions = {
   end,
 }
 
-lspconfig.clangd.setup {
-  on_attach = function(client, bufnr)
-    navic.attach(client, bufnr)
-  end
-}
-
 -- Config
 local config = {
   options = {
