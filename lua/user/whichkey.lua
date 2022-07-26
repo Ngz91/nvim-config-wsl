@@ -168,6 +168,7 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+    v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual text" },
   },
   s = {
     name = "Search",
