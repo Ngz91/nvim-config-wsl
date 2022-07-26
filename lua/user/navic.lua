@@ -3,6 +3,12 @@ if not status_ok then
   return
 end
 
+require("lspconfig").clangd.setup {
+  on_attach = function(client, bufnr)
+    navic.attach(client, bufnr)
+  end
+}
+
 navic.setup {
     icons = {
       File          = " ",
