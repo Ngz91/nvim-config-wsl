@@ -101,7 +101,7 @@ return packer.startup(function(use)
   -- Debugging
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
-  use "Pocco81/DAPInstall.nvim"
+  use "ravenxrz/DAPInstall.nvim"
 
   -- Testing
   use {

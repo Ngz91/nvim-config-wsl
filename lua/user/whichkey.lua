@@ -139,6 +139,14 @@ local mappings = {
     F = { "<cmd>lua _DJANGO_FLUSH()<cr>", "Flush DB" },
   },
 
+  D = {
+    name = "Python debugging",
+    t = { "<cmd>DapToggleBreakpoint<cr>", "Toggle" },
+    c = { "<cmd>DapContinue<cr>", "Continue" },
+    k = { "<cmd>DapTerminate<cr>", "Terminate" },
+    l = { "<cmd>DapShowLog<cr>", "Log" },
+  },
+
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -193,6 +201,7 @@ local mappings = {
     --s = { "<cmd>lua require('neotest').summary.open()<cr>", "Toggle test summary" },
     t = { "<cmd>lua _PYTEST_TOGGLE()<cr>", "Run pytest on file" },
     c = { "<cmd>lua _PYTEST_CLOSE()<cr>", "Close pytest terminal" },
+    f = { "<cmd>!black %<cr>", "Black formatting" }
   },
   t = {
     name = "Terminal",
