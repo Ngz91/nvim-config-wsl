@@ -200,7 +200,6 @@ local mappings = {
     --o = { "<cmd>lua require('neotest').output.open()<cr>", "Show error output" },
     --s = { "<cmd>lua require('neotest').summary.open()<cr>", "Toggle test summary" },
     t = { "<cmd>lua _PYTEST_TOGGLE()<cr>", "Run pytest on file" },
-    c = { "<cmd>lua _PYTEST_CLOSE()<cr>", "Close pytest terminal" },
     f = { "<cmd>!black %<cr>", "Black formatting" }
   },
   t = {
