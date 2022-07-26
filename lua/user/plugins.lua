@@ -48,16 +48,16 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use "romgrk/barbar.nvim"
   use "moll/vim-bbye"
+  use "goolord/alpha-nvim"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "karb94/neoscroll.nvim"
+  use "romgrk/barbar.nvim"
 
   -- Colors
   use "NvChad/nvim-colorizer.lua"

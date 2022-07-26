@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
+nvimtree.setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
