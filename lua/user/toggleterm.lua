@@ -89,7 +89,7 @@ function _DJANGO_RUNSERVER()
   django_runserver:toggle()
 end
 
-local pytest = Terminal:new({ cmd = "python3 -m pytest", hidden = true, close_on_exit = false })
+local pytest = Terminal:new({ cmd = "pytest", hidden = true, close_on_exit = false })
 
 function _PYTEST_TOGGLE()
   pytest:toggle()
