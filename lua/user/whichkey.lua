@@ -132,7 +132,7 @@ local mappings = {
   d = {
     name = "Django",
     s = { "<cmd>lua _DJANGO_STARTPROJECT()<CR>", "Start project" },
-    y = { "<cmd>lua _DJANGO_CREATEAPP()<cr>", "Create App" },
+    a = { "<cmd>lua _DJANGO_CREATEAPP()<cr>", "Create App" },
     r = { "<cmd>lua _DJANGO_RUNSERVER()<cr>", "Run django server" },
     d = { "<cmd>lua _DJANGO_DB_SHELL()<cr>", "DB Shell" },
     t = { "<cmd>lua _DJANGO_SHELL()<cr>", "Django Shell" },
@@ -193,7 +193,7 @@ local mappings = {
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
   n = {
-    name = "Pytest",
+    name = "Neotest",
     a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach" },
     r = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Run current file" },
     d = { "<cmd>lua require('neotest').run.run({ strategy = 'dap' })<cr>", "Run nearest test" },
@@ -201,6 +201,7 @@ local mappings = {
     s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle test summary" },
     k = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
     t = { "<cmd>lua _PYTEST_TOGGLE()<cr>", "Run pytest on file" },
+    D = { "<cmd>lua require('neotest').diagnostic<cr>", "Show diagnostics" },
   },
   t = {
     name = "Terminal",

@@ -54,16 +54,16 @@ end
 
 function _DJANGO_CREATEAPP()
   local app_name = vim.fn.input("App Name: ")
-  local django_createapp = Terminal:new({ cmd = string.format("cd * && python manage.py createapp %s", app_name), hidden = true })
+  local django_createapp = Terminal:new({ cmd = string.format("cd * && python3 manage.py createapp %s", app_name), hidden = true })
   django_createapp:toggle()
 end
 
-local django_shell = Terminal:new({ cmd = "cd * && python manage.py shell", hidden = true, direction = "vertical" })
-local django_db_shell = Terminal:new({ cmd = "cd * && python manage.py dbshell", hidden = true, direction = "vertical" })
-local django_makemigrations = Terminal:new({ cmd = "cd * && python manage.py makemigrations", hidden = true })
-local django_migrate = Terminal:new({ cmd = "cd * && python manage.py migrate", hidden = true })
-local django_flush = Terminal:new({ cmd = "cd * && python manage.py flush", hidden = true })
-local django_runserver = Terminal:new({ cmd = "cd * && python manage.py runserver", hidden = true, direction = "vertical" })
+local django_shell = Terminal:new({ cmd = "cd * && python3 manage.py shell", hidden = true, direction = "vertical" })
+local django_db_shell = Terminal:new({ cmd = "cd * && python3 manage.py dbshell", hidden = true, direction = "vertical" })
+local django_makemigrations = Terminal:new({ cmd = "cd * && python3 manage.py makemigrations", hidden = true })
+local django_migrate = Terminal:new({ cmd = "cd * && python3 manage.py migrate", hidden = true })
+local django_flush = Terminal:new({ cmd = "cd * && python3 manage.py flush", hidden = true })
+local django_runserver = Terminal:new({ cmd = "cd * && python3 manage.py runserver", hidden = true, direction = "vertical" })
 
 function _DJANGO_MAKEMIGRATIONS()
   django_makemigrations:toggle()
