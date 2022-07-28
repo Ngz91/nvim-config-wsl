@@ -90,9 +90,14 @@ function _DJANGO_RUNSERVER()
 end
 
 local pytest = Terminal:new({ cmd = "pytest", hidden = true, close_on_exit = false })
+local pytest_report = Terminal:new({ cmd="pytest -rP", hidden=true, close_on_exit=false })
 
 function _PYTEST_TOGGLE()
   pytest:toggle()
+end
+
+function _PYTEST_REPORT_TOGGLE()
+  pytest_report:toggle()
 end
 
 local node = Terminal:new({ cmd = "node", hidden = true })

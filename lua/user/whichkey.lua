@@ -201,6 +201,11 @@ local mappings = {
     s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle test summary" },
     k = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
   },
+  m = {
+    name="Pytest",
+    p = { "<cmd>lua _PYTEST_TOGGLE()<cr>", "Pytest" },
+    r = { "<cmd>lua _PYTES_REPORT_TOGGLE()<cr>", "Pytest report" },
+  },
   t = {
     name = "Terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
