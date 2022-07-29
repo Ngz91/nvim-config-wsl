@@ -22,7 +22,7 @@ local colors = {
   green    = '#98be65',
   orange   = '#FF8800',
   violet   = '#a9a1e1',
-  magenta  = '#c678dd',
+  magenta  = '#ed15c2',
   blue     = '#51afef',
   red      = '#ec5f67',
 }
@@ -129,12 +129,6 @@ ins_left {
 }
 
 ins_left {
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
-}
-
-ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
   color = { fg = colors.magenta, gui = 'bold' },
@@ -168,6 +162,7 @@ ins_left {
 	navic_gps,
 	sources = {navic_gps},
 	cond = conditions.hide_in_width,
+  color = { fg = colors.blue }, -- Sets highlighting of component
 }
 
 -- Insert mid section. You can make any number of sections in neovim :)
@@ -196,7 +191,7 @@ ins_right {
     return msg
   end,
   icon = ' LSP:',
-  color = { fg = '#ffffff', gui = 'bold' },
+  color = { fg = '#11d93d', gui = 'bold' },
 }
 
 -- Add components to right sections
