@@ -178,6 +178,7 @@ local mappings = {
       "Workspace Symbols",
     },
     v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual text" },
+    h = { "<cmd>lua require('lsp-inlayhints').toggle()<cr>", "Toggle Inlayhints(TS)" }
   },
   s = {
     name = "Search",
