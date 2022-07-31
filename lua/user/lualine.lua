@@ -21,7 +21,7 @@ local colors = {
   darkblue = '#081633',
   green    = '#98be65',
   orange   = '#FF8800',
-  violet   = '#a9a1e1',
+  violet   = '#c118c4',
   magenta  = '#ed15c2',
   blue     = '#51afef',
   red      = '#ec5f67',
@@ -134,9 +134,9 @@ ins_left {
   color = { fg = colors.magenta, gui = 'bold' },
 }
 
-ins_left { 'location' }
+ins_left { 'location' , color = { fg = colors.red, gui="bold" } }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left { 'progress', color = { fg = colors.orange, gui = 'bold' } }
 
 ins_left {
   'diagnostics',

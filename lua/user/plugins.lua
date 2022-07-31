@@ -63,6 +63,9 @@ return packer.startup(function(use)
   use "NvChad/nvim-colorizer.lua"
   use "ziontee113/color-picker.nvim"
 
+  -- Colorsheme
+  use 'tiagovla/tokyodark.nvim'
+
   -- Keybindings
   use "folke/which-key.nvim"
 
