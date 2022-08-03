@@ -158,7 +158,7 @@ local mappings = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {
@@ -178,7 +178,9 @@ local mappings = {
       "Workspace Symbols",
     },
     v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual text" },
-    h = { "<cmd>lua require('lsp-inlayhints').toggle()<cr>", "Toggle Inlayhints(TS)" }
+    h = { "<cmd>lua require('lsp-inlayhints').toggle()<cr>", "Toggle Inlayhints" },
+    R = { "<cmd>lua require('lsp-inlayhints').reset()<cr>", "Reset Inlayhints" },
+
   },
   s = {
     name = "Search",

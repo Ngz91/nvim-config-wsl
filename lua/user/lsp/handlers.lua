@@ -72,14 +72,6 @@ local function attach_navic(client, bufnr)
   navic.attach(client, bufnr)
 end
 
-local function attach_inlayhints(bufnr, client)
-  local inlayhints_status_ok, inlayhints = pcall(require, "lsp-inlayhints")
-    if not inlayhints_status_ok then
-    return
-  end
-  inlayhints.on_attach(bufnr, client)
-end
-
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -105,13 +97,12 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
---    attach_inlayhints(bufnr, client)
-  end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
   attach_navic(client, bufnr)
+  if client.name == "tsserver" then
+    require("lsp-inlayhints").on_attach(bufnr, client)
+  end
 end
 
 return M
