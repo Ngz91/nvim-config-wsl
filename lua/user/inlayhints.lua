@@ -30,7 +30,7 @@ hints.setup {
     type_hints = {
       -- type and other hints
       show = true,
-      prefix = "<- ",
+      prefix = " ",
       separator = ", ",
       remove_colon_end = false,
       remove_colon_start = false,
