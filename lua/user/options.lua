@@ -4,6 +4,7 @@ for opt, val in pairs({
   clipboard = "unnamed",
   completeopt = "menuone,noselect,menu",
   conceallevel = 3,
+  cursorline = true,
   cursorlineopt = "number",
   diffopt = "internal,filler,closeoff,algorithm:patience",
   expandtab = true,
