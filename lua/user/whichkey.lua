@@ -97,6 +97,8 @@ local mappings = {
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", " Projects" },
   ["r"] = { "<cmd>:set number relativenumber!<cr>", " Relative numbers" },
   ["C"] = { "<cmd>PickColor<cr>", " Color picker" },
+  ["v"] = {"<cmd>vsplit<cr>", " Vsplit"},
+  ["H"] = {"<cmd>split<cr>", " Hsplit"},
 
   p = {
     name = " Packer",
