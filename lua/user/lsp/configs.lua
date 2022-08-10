@@ -1,14 +1,37 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason = pcall(require, "mason")
 if not status_ok then
 	return
 end
 
-local lspconfig = require("lspconfig")
+local status_ok_1, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_ok_1 then
+  return
+end
+
+local status_ok_2, lspconfig = pcall(require, "lspconfig")
+if not status_ok_2 then
+  return
+end
 
 local servers = { "jsonls", "sumneko_lua", "tsserver", "pyright", "html" }
 
-lsp_installer.setup {
-	ensure_installed = servers
+local settings = {
+  ui = {
+    border = "rounded",
+    icons = {
+      package_installed = "◍",
+      package_pending = "◍",
+      package_uninstalled = "◍",
+    },
+  },
+  log_level = vim.log.levels.INFO,
+  max_concurrent_installers = 4,
+}
+
+mason.setup(settings)
+mason_lspconfig.setup {
+	ensure_installed = servers,
+  automatic_installation = true
 }
 
 for _, server in pairs(servers) do
@@ -21,4 +44,17 @@ for _, server in pairs(servers) do
 	 	opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
 	end
 	lspconfig[server].setup(opts)
+  if server == "sumneko_lua" then
+    local l_status_ok, lua_dev = pcall(require, "lua-dev")
+    if not l_status_ok then
+      return
+    end
+    local luadev = lua_dev.setup {
+      lspconfig = {
+        on_attach = opts.on_attach,
+        capabilities = opts.capabilities,
+      },
+    }
+    lspconfig.sumneko_lua.setup(luadev)
+  end
 end

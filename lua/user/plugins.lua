@@ -81,9 +81,15 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+  -- Lua Development
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+  use "folke/lua-dev.nvim" -- Lua development with full signature help, docs and completion
+
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  --use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "RRethy/vim-illuminate" -- highlight other uses of the word under cursor-- Nvim Navic
