@@ -134,7 +134,7 @@ ins_left {
   color = { fg = colors.magenta, gui = 'bold' },
 }
 
-ins_left { 'location' , color = { fg = colors.red, gui="bold" } }
+ins_left { 'location', color = { fg = colors.red, gui = "bold" } }
 
 ins_left { 'progress', color = { fg = colors.orange, gui = 'bold' } }
 
@@ -149,7 +149,7 @@ ins_left {
   },
 }
 
-local navic_gps = function ()
+local navic_gps = function()
   local navic_location = navic.get_location()
   if navic_location == "error" then
     return ""
@@ -159,9 +159,9 @@ local navic_gps = function ()
 end
 
 ins_left {
-	navic_gps,
-	sources = {navic_gps},
-	cond = conditions.hide_in_width,
+  navic_gps,
+  sources = { navic_gps },
+  cond = conditions.hide_in_width,
   color = { fg = colors.blue }, -- Sets highlighting of component
 }
 
