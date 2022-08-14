@@ -16,7 +16,7 @@ end
 local colors = {
   bg       = '#202328',
   fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
+  yellow   = '#E5C76B',
   cyan     = '#008080',
   darkblue = '#081633',
   green    = '#98be65',
@@ -24,7 +24,7 @@ local colors = {
   violet   = '#c118c4',
   magenta  = '#ed15c2',
   blue     = '#51afef',
-  red      = '#ec5f67',
+  red      = '#fa2549',
 }
 
 local conditions = {
