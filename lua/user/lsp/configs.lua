@@ -13,7 +13,7 @@ if not status_ok_2 then
 	return
 end
 
-local servers = { "jsonls", "sumneko_lua", "tsserver", "pyright", "html" }
+local servers = { "jsonls", "sumneko_lua", "tsserver", "pyright", "html", "cssls" }
 
 local settings = {
 	ui = {
