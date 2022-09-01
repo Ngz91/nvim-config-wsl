@@ -182,6 +182,7 @@ local mappings = {
 		v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual text" },
 		h = { "<cmd>lua require('lsp-inlayhints').toggle()<cr>", "Toggle Inlayhints" },
 		R = { "<cmd>lua require('lsp-inlayhints').reset()<cr>", "Reset Inlayhints" },
+		o = { "<cmd>SymbolsOutline<cr>, Toggle Symbols Outline" },
 	},
 	s = {
 		name = " Search",
