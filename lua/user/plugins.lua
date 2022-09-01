@@ -96,6 +96,7 @@ return packer.startup(function(use)
   use "SmiteshP/nvim-navic" -- Gps
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- Diagnostics using virtual text
   use "lvimuser/lsp-inlayhints.nvim"
+  use "simrat39/symbols-outline.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
