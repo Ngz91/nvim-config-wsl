@@ -15,6 +15,21 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
+local function contains(t, value)
+	for _, v in pairs(t) do
+		if v == value then
+			return true
+		end
+	end
+end
+
+local buffer_fts = {
+	"markdown",
+	"toml",
+	"yaml",
+	"json",
+}
+
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
@@ -44,6 +59,8 @@ local kind_icons = {
 	TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
+
+local compare = require("cmp.config.compare")
 
 cmp.setup({
 	snippet = {
@@ -99,7 +116,6 @@ cmp.setup({
 		format = function(entry, vim_item)
 			-- Kind icons
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
 				luasnip = "[Snippet]",
@@ -110,10 +126,31 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
+		{ name = "nvim_lsp", group_index = 2 },
+		{ name = "luasnip", group_index = 2 },
+		{
+			name = "buffer",
+			group_index = 2,
+			filter = function(entry, ctx)
+				if not contains(buffer_fts, ctx.prev_context.filetype) then
+					return true
+				end
+			end,
+		},
+		{ name = "path", group_index = 2 },
+	},
+	sorting = {
+		priority_weight = 2,
+		comparators = {
+			compare.offset,
+			compare.exact,
+			compare.score,
+			compare.recently_used,
+			compare.locality,
+			compare.sort_text,
+			compare.length,
+			compare.order,
+		},
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
