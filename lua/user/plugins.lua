@@ -57,13 +57,26 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "karb94/neoscroll.nvim"
   use "romgrk/barbar.nvim"
+  use {
+    "anuvyklack/windows.nvim",
+    requires = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim"
+    },
+    config = function()
+      vim.o.winwidth = 10
+      vim.o.winminwidth = 10
+      vim.o.equalalways = false
+      require('windows').setup({autowidth = {enable=false}})
+    end
+  }
 
   -- Colors
   use "NvChad/nvim-colorizer.lua"
   use "ziontee113/color-picker.nvim"
 
   -- Colorsheme
---  use 'tiagovla/tokyodark.nvim'
+  -- use 'tiagovla/tokyodark.nvim'
 
   -- Keybindings
   use "folke/which-key.nvim"
