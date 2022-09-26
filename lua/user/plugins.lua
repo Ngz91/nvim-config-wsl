@@ -63,7 +63,7 @@ return packer.startup(function(use)
   use "ziontee113/color-picker.nvim"
 
   -- Colorsheme
-  use 'tiagovla/tokyodark.nvim'
+--  use 'tiagovla/tokyodark.nvim'
 
   -- Keybindings
   use "folke/which-key.nvim"
@@ -105,6 +105,7 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
+    commit = "730efb4e58ed084150665653e6ffe780015ec29d",
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
