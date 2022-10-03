@@ -229,6 +229,11 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+	o = {
+		name = "Options",
+		c = { "<cmd>lua vim.g.cmp_active = not vim.g.cmp_active<cr>", "Completion On/Off" },
+		w = { "<cmd>set wrap!<cr>", "Wrap" },
+	},
 }
 
 which_key.setup(setup)
